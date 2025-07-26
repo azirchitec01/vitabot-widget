@@ -862,7 +862,7 @@ const welcomeScreenHTML = `
             // Show error message
             const errorMessage = document.createElement('div');
             errorMessage.className = 'chat-bubble bot-bubble';
-            errorMessage.textContent = "Sorry, I couldn't connect to the server. Please try again later.";
+            errorMessage.textContent = "Désolé, je n'ai pas pu me connecter au serveur. Veuillez réessayer plus tard.";
             messagesContainer.appendChild(errorMessage);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
@@ -930,7 +930,7 @@ const welcomeScreenHTML = `
             // Show error message
             const errorMessage = document.createElement('div');
             errorMessage.className = 'chat-bubble bot-bubble';
-            errorMessage.textContent = "Sorry, I couldn't send your message. Please try again.";
+            errorMessage.textContent = "Désolé, je n'ai pas pu envoyer votre message. Veuillez réessayer.";
             messagesContainer.appendChild(errorMessage);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         } finally {
