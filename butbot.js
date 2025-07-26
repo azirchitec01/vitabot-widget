@@ -624,7 +624,7 @@ const welcomeScreenHTML = `
         <input type="tel" id="chat-user-whatsapp" class="form-input" placeholder="Votre numéro WhatsApp" required>
         <div class="error-text" id="whatsapp-error"></div>
       </div>
-      <button type="submit" class="submit-registration">Continue to Chat</button>
+      <button type="submit" class="submit-registration">Continuer à discuter</button>
     </form>
   </div>
 `;
@@ -635,7 +635,7 @@ const welcomeScreenHTML = `
         <div class="chat-body">
             <div class="chat-messages"></div>
             <div class="chat-controls">
-                <textarea class="chat-textarea" placeholder="Type your message here..." rows="1"></textarea>
+                <textarea class="chat-textarea" placeholder="Tapez votre message ici..." rows="1"></textarea>
                 <button class="chat-submit">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 2L11 13"></path>
