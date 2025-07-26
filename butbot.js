@@ -609,13 +609,13 @@ const welcomeScreenHTML = `
     <h2 class="registration-title">Envoyez vos coordonnées pour commencer</h2>
     <form class="registration-form">
       <div class="form-field">
-        <label class="form-label" for="chat-user-name">Name</label>
-        <input type="text" id="chat-user-name" class="form-input" placeholder="Your name" required>
+        <label class="form-label" for="chat-user-name">Nom & Prénom</label>
+        <input type="text" id="chat-user-name" class="form-input" placeholder="Votre nom complet" required>
         <div class="error-text" id="name-error"></div>
       </div>
       <div class="form-field">
         <label class="form-label" for="chat-user-email">Email</label>
-        <input type="email" id="chat-user-email" class="form-input" placeholder="Your email address" required>
+        <input type="email" id="chat-user-email" class="form-input" placeholder="Votre email adresse" required>
         <div class="error-text" id="email-error"></div>
       </div>
       <!-- ➜ Nouveau champ WhatsApp -->
