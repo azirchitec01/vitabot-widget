@@ -602,7 +602,7 @@
         </div>
         <div class="chat-welcome">
             <h2 class="chat-welcome-title">${settings.branding.welcomeText}</h2>
-            <button class="chat-start-btn">
+            <button >
                 
                 Commencez
             </button>
