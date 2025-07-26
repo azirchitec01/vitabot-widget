@@ -594,39 +594,41 @@
     chatWindow.className = `chat-window ${settings.style.position === 'left' ? 'left-side' : 'right-side'}`;
     
     // Create welcome screen with header
-    const welcomeScreenHTML = `
-        <div class="chat-header">
-            <img class="chat-header-logo" src="${settings.branding.logo}" alt="${settings.branding.name}">
-            <span class="chat-header-title">${settings.branding.name}</span>
-            <button class="chat-close-btn">×</button>
-        </div>
-        <div class="chat-welcome">
-            <h2 class="chat-welcome-title">${settings.branding.welcomeText}</h2>
-            <button class="chat-start-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-                Commencez
-            </button>
-            <p class="chat-response-time">${settings.branding.responseTimeText}</p>
-        </div>
-        <div class="user-registration">
-            <h2 class="registration-title">Envoyez vos coordonnées pour commencer</h2>
-            <form class="registration-form">
-                <div class="form-field">
-                    <label class="form-label" for="chat-user-name">Name</label>
-                    <input type="text" id="chat-user-name" class="form-input" placeholder="Your name" required>
-                    <div class="error-text" id="name-error"></div>
-                </div>
-                <div class="form-field">
-                    <label class="form-label" for="chat-user-email">Email</label>
-                    <input type="email" id="chat-user-email" class="form-input" placeholder="Your email address" required>
-                    <div class="error-text" id="email-error"></div>
-                </div>
-                <button type="submit" class="submit-registration">Continue to Chat</button>
-            </form>
-        </div>
-    `;
+const welcomeScreenHTML = `
+  <div class="chat-header">
+    <img class="chat-header-logo" src="${settings.branding.logo}" alt="${settings.branding.name}">
+    <span class="chat-header-title">${settings.branding.name}</span>
+    <button class="chat-close-btn">×</button>
+  </div>
+  <div class="chat-welcome">
+    <h2 class="chat-welcome-title">${settings.branding.welcomeText}</h2>
+    <button class="chat-start-btn">Commencez</button>
+    <p class="chat-response-time">${settings.branding.responseTimeText}</p>
+  </div>
+  <div class="user-registration">
+    <h2 class="registration-title">Envoyez vos coordonnées pour commencer</h2>
+    <form class="registration-form">
+      <div class="form-field">
+        <label class="form-label" for="chat-user-name">Name</label>
+        <input type="text" id="chat-user-name" class="form-input" placeholder="Your name" required>
+        <div class="error-text" id="name-error"></div>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="chat-user-email">Email</label>
+        <input type="email" id="chat-user-email" class="form-input" placeholder="Your email address" required>
+        <div class="error-text" id="email-error"></div>
+      </div>
+      <!-- ➜ Nouveau champ WhatsApp -->
+      <div class="form-field">
+        <label class="form-label" for="chat-user-whatsapp">WhatsApp</label>
+        <input type="tel" id="chat-user-whatsapp" class="form-input" placeholder="Votre numéro WhatsApp" required>
+        <div class="error-text" id="whatsapp-error"></div>
+      </div>
+      <button type="submit" class="submit-registration">Continue to Chat</button>
+    </form>
+  </div>
+`;
+
 
     // Create chat interface without duplicating the header
     const chatInterfaceHTML = `
@@ -737,17 +739,17 @@
         let isValid = true;
         
         if (!name) {
-            nameError.textContent = 'Please enter your name';
+            nameError.textContent = 'Veuillez entrer votre nom';
             nameInput.classList.add('error');
             isValid = false;
         }
         
         if (!email) {
-            emailError.textContent = 'Please enter your email';
+            emailError.textContent = 'Veuillez entrer votre email';
             emailInput.classList.add('error');
             isValid = false;
         } else if (!isValidEmail(email)) {
-            emailError.textContent = 'Please enter a valid email address';
+            emailError.textContent = 'S'il vous plaît, mettez une adresse email valide';
             emailInput.classList.add('error');
             isValid = false;
         }
