@@ -623,6 +623,11 @@
                     <input type="email" id="chat-user-email" class="form-input" placeholder="Votre Email adresse" required>
                     <div class="error-text" id="email-error"></div>
                 </div>
+                <div class="form-field">
+                      <label class="form-label" for="chat-user-phone">Téléphone</label>
+                      <input type="tel" id="chat-user-phone" class="form-input" placeholder="Votre numéro WhatsApp" required>
+                      <div class="error-text" id="phone-error"></div>
+                </div>
                 <button type="submit" class="submit-registration">Commencez</button>
             </form>
         </div>
@@ -678,6 +683,9 @@
     const emailInput = chatWindow.querySelector('#chat-user-email');
     const nameError = chatWindow.querySelector('#name-error');
     const emailError = chatWindow.querySelector('#email-error');
+    const phoneInput = chatWindow.querySelector('#chat-user-phone');
+    const phoneError = chatWindow.querySelector('#phone-error');
+
 
     // Helper function to generate unique session ID
     function createSessionId() {
@@ -732,6 +740,8 @@
         // Get values
         const name = nameInput.value.trim();
         const email = emailInput.value.trim();
+        const phone = phoneInput.value.trim();
+
         
         // Validate
         let isValid = true;
@@ -749,6 +759,11 @@
         } else if (!isValidEmail(email)) {
             emailError.textContent = 'SVP, mettez une adresse email valide';
             emailInput.classList.add('error');
+            isValid = false;
+        }
+        if (!phone) {
+            phoneError.textContent = 'Veuillez entrer votre téléphone';
+            phoneInput.classList.add('error');
             isValid = false;
         }
         
@@ -789,7 +804,7 @@
             const sessionResponseData = await sessionResponse.json();
             
             // Send user info as first message
-            const userInfoMessage = `Name: ${name}\nEmail: ${email}`;
+            const userInfoMessage = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}`;
             
             const userInfoData = {
                 action: "sendMessage",
@@ -799,6 +814,7 @@
                 metadata: {
                     userId: email,
                     userName: name,
+                    userPhone: phone,
                     isUserInfo: true
                 }
             };
