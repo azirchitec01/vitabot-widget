@@ -602,10 +602,7 @@
         </div>
         <div class="chat-welcome">
             <h2 class="chat-welcome-title">${settings.branding.welcomeText}</h2>
-            <button >
-                
-                Commencez
-            </button>
+            <button type="submit" class="submit-registration">Commencez</button>
             <p class="chat-response-time">${settings.branding.responseTimeText}</p>
         </div>
         <div class="user-registration">
