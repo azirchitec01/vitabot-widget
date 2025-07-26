@@ -749,7 +749,7 @@ const welcomeScreenHTML = `
             emailInput.classList.add('error');
             isValid = false;
         } else if (!isValidEmail(email)) {
-            emailError.textContent = 'S'il vous plaît, mettez une adresse email valide';
+            emailError.textContent = 'SVP, mettez une adresse email valide';
             emailInput.classList.add('error');
             isValid = false;
         }
